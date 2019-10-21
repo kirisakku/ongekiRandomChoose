@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OngekiRandomChoose</string>
+    <string name="random">ランダム選曲</string>
+    <string name="chooseResult"/>
+</resources>
