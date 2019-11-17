@@ -34,7 +34,33 @@ fun readFile(thisArg: MainActivity): List<List<String>> {
     return separatedList;
 }
 
-fun getList(thisArg:MainActivity): MutableList<Map<String, String>> {
+fun isFileteredRate(rate:String, filteredDifficulty: MutableList<String>): Boolean {
+    var flag = false;
+    val numRate = rate.toDouble();
+    filteredDifficulty.forEach{
+        when(it) {
+            "14+" -> flag = (14.7 <= numRate && numRate <= 14.9)
+            "14" -> flag = (14.0 <= numRate && numRate <= 14.6)
+            "13+" -> flag = (13.7 <= numRate && numRate <= 13.9)
+            "13" -> flag = (13.0 <= numRate && numRate <= 13.6)
+            "12+" -> flag = (12.7 <= numRate && numRate <= 12.9)
+            "12" -> flag = (12.0 <= numRate && numRate <= 12.6)
+            "11+" -> flag = (11.7 <= numRate && numRate <= 11.9)
+            "11" -> flag = (11.0 <= numRate && numRate <= 11.6)
+            "10+" -> flag = (10.7 <= numRate && numRate <= 10.9)
+            "10" -> flag = (10.0 <= numRate && numRate <= 10.6)
+        }
+
+        if (flag) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+fun getList(thisArg:MainActivity, filteredRate: MutableList<String>): MutableList<Map<String, String>> {
+    print("getList")
     val musicList = readFile(thisArg);
     var objectList = mutableListOf<Map<String, String>>();
     musicList.forEach{
@@ -44,7 +70,11 @@ fun getList(thisArg:MainActivity): MutableList<Map<String, String>> {
         val rate = it[3];
         val map: Map<String, String> =
             mapOf("difficulty" to difficulty, "category" to category, "title" to title, "rate" to rate);
-        objectList.add(map);
+
+        // フィルタ対象でなければ追加
+        if (isFileteredRate(rate, filteredRate) == false) {
+            objectList.add(map);
+        }
     }
 
     return objectList;

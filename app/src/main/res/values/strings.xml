@@ -1,5 +1,16 @@
 <resources>
-    <string name="app_name">OngekiRandomChoose</string>
     <string name="random">ランダム選曲</string>
     <string name="chooseResult"/>
+    <string name="filterOption">フィルタオプション</string>
+    <string name="checkbox1">14+</string>
+    <string name="app_name">オンゲキランダム選曲</string>
+    <string name="checkBox14">14</string>
+    <string name="checkBox13plus">13+</string>
+    <string name="checkBox13">13</string>
+    <string name="checkBox12plus">12+</string>
+    <string name="checkBox12">12</string>
+    <string name="checkBox11plus">11+</string>
+    <string name="checkBox11">11</string>
+    <string name="checkBox10plus">10+</string>
+    <string name="checkBox10">10</string>
 </resources>
