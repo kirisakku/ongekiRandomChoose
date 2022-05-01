@@ -10,6 +10,9 @@ class MainActivity : AppCompatActivity() {
     fun getFileteredRate():MutableList<String> {
         val filteredRate:MutableList<String> = mutableListOf();
         // チェックが外れていたらフィルタ
+        if (checkBox15.isChecked() == false) {
+            filteredRate.add("15");
+        }
         if (checkBox14plus.isChecked() == false) {
             filteredRate.add("14+");
         }

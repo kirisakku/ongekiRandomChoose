@@ -39,6 +39,7 @@ fun isFileteredRate(rate:String, filteredDifficulty: MutableList<String>): Boole
     val numRate = rate.toDouble();
     filteredDifficulty.forEach{
         when(it) {
+            "15" -> flag = (15.0 <= numRate && numRate <= 15.6)
             "14+" -> flag = (14.7 <= numRate && numRate <= 14.9)
             "14" -> flag = (14.0 <= numRate && numRate <= 14.6)
             "13+" -> flag = (13.7 <= numRate && numRate <= 13.9)

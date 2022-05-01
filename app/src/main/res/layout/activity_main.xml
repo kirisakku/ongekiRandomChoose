@@ -21,15 +21,25 @@
         android:id="@+id/chooseResult" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="169dp"
         app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="543dp"/>
     <CheckBox
-        android:text="@string/checkbox1"
+        android:text="15"
         android:layout_width="124dp"
         android:layout_height="31dp"
-        android:id="@+id/checkBox14plus"
+        android:id="@+id/checkBox15"
         android:checked="true"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/random"
         />
+    <CheckBox
+        android:text="@string/checkbox1"
+        android:layout_width="124dp"
+        android:layout_height="31dp"
+        android:id="@+id/checkBox14plus"
+        android:checked="true"
+        app:layout_constraintStart_toStartOf="@id/checkBox15"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox15"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox15"
+        app:layout_constraintHorizontal_bias="0.0"/>
     <CheckBox
         android:text="@string/checkBox14"
         android:layout_width="124dp"
